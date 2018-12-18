@@ -50,10 +50,6 @@
                     <label class="control-label" for="input-payment-address-1"><?php echo $entry_address_1; ?></label>
                     <input type="text" name="payment_address_1" value="<?php echo $payment_address_1; ?>" placeholder="<?php echo $entry_address_1; ?>" id="input-payment-address-1" class="form-control" required autocomplete="billing street-address" />
                 </div>
-                <div class="form-group col-sm-12">
-                    <label class="control-label" for="input-payment-address-2"><?php echo $entry_address_2; ?></label>
-                    <input type="text" name="payment_address_2" value="<?php echo $payment_address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-payment-address-2" class="form-control" />
-                </div>
                 <div class="form-group col-sm-12 required">
                     <label class="control-label" for="input-payment-city"><?php echo $entry_city; ?></label>
                     <input type="text" name="payment_city" value="<?php echo $payment_city; ?>" placeholder="<?php echo $entry_city; ?>" id="input-payment-city" class="form-control" required autocomplete="billing locality" />
@@ -224,10 +220,6 @@
                 <div class="form-group col-sm-12 required">
                     <label class="control-label" for="input-shipping-address-1"><?php echo $entry_address_1; ?></label>
                     <input type="text" name="shipping_address_1" value="<?php echo $shipping_address_1; ?>" placeholder="<?php echo $entry_address_1; ?>" id="input-shipping-address-1" class="form-control" required autocomplete="shipping street-address" />
-                </div>
-                <div class="form-group col-sm-12">
-                    <label class="control-label" for="input-shipping-address-2"><?php echo $entry_address_2; ?></label>
-                    <input type="text" name="shipping_address_2" value="<?php echo $shipping_address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-shipping-address-2" class="form-control" />
                 </div>
                 <div class="form-group col-sm-12 required">
                     <label class="control-label" for="input-shipping-city"><?php echo $entry_city; ?></label>

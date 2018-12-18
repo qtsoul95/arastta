@@ -743,7 +743,7 @@ footer h5 {
 }
 .product-thumb .caption {
     padding: 0 20px;
-    min-height: 180px;
+    min-height: 130px;
 }
 .product-list .product-thumb .caption {
     margin-left: 230px;
@@ -814,7 +814,7 @@ h2.price {
     }
 }
 .product-thumb .button-group button {
-    width: 60%;
+    width: 100%;
     border: none;
     display: inline-block;
     float: left;

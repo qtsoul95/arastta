@@ -28,7 +28,7 @@
                 <label class="control-label" for="input-guest-lastname"><?php echo $entry_lastname; ?></label>
                 <input type="text" name="lastname" value="<?php echo $lastname; ?>" placeholder="<?php echo $entry_lastname; ?>" id="input-guest-lastname" class="form-control" required autocomplete="family-name" />
             </div>
-            <div class="form-group col-sm-6 required">
+            <div class="form-group col-sm-6">
                 <label class="control-label" for="input-guest-email"><?php echo $entry_email; ?></label>
                 <input type="text" name="email" value="<?php echo $email; ?>" placeholder="<?php echo $entry_email; ?>" id="input-guest-email" class="form-control" required autocomplete="email" />
             </div>

@@ -60,6 +60,7 @@
                     </div>
                     <div id="ar-account-select">
                         <div class="panel-body">
+                            <?php if ($settings_login_customer) { ?>
                             <div class="radio">
                                 <label>
                                     <input type="radio" id="ar-account-login" value="login" name="ar-account-name">
@@ -72,10 +73,11 @@
                                     <?php echo $text_register; ?>
                                 </label>
                             </div>
+                            <?php } ?>
                             <?php if ($checkout_guest) { ?>
                             <div class="radio">
                                 <label>
-                                    <input type="radio" id="ar-account-guest" value="guest" name="ar-account-name">
+                                    <input type="radio" id="ar-account-guest" value="guest" name="ar-account-name" checked="checked">
                                     <?php echo $text_guest; ?>
                                 </label>
                             </div>

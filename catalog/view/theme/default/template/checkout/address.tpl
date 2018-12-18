@@ -42,25 +42,13 @@
                     <label class="control-label" for="input-payment-lastname"><?php echo $entry_lastname; ?></label>
                     <input type="text" name="payment_lastname" value="<?php echo $payment_lastname; ?>" placeholder="<?php echo $entry_lastname; ?>" id="input-payment-lastname" class="form-control" required autocomplete="billing family-name" />
                 </div>
-                <div class="form-group col-sm-12">
-                    <label class="control-label" for="input-payment-company"><?php echo $entry_company; ?></label>
-                    <input type="text" name="payment_company" value="<?php echo $payment_company; ?>" placeholder="<?php echo $entry_company; ?>" id="input-payment-company" class="form-control" />
-                </div>
                 <div class="form-group col-sm-12 required">
                     <label class="control-label" for="input-payment-address-1"><?php echo $entry_address_1; ?></label>
                     <input type="text" name="payment_address_1" value="<?php echo $payment_address_1; ?>" placeholder="<?php echo $entry_address_1; ?>" id="input-payment-address-1" class="form-control" required autocomplete="billing street-address" />
                 </div>
-                <div class="form-group col-sm-12">
-                    <label class="control-label" for="input-payment-address-2"><?php echo $entry_address_2; ?></label>
-                    <input type="text" name="payment_address_2" value="<?php echo $payment_address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-payment-address-2" class="form-control" />
-                </div>
                 <div class="form-group col-sm-12 required">
                     <label class="control-label" for="input-payment-city"><?php echo $entry_city; ?></label>
                     <input type="text" name="payment_city" value="<?php echo $payment_city; ?>" placeholder="<?php echo $entry_city; ?>" id="input-payment-city" class="form-control" required autocomplete="billing locality" />
-                </div>
-                <div class="form-group col-sm-12 required">
-                    <label class="control-label" for="input-payment-postcode"><?php echo $entry_postcode; ?></label>
-                    <input type="text" name="payment_postcode" value="<?php echo $payment_postcode; ?>" placeholder="<?php echo $entry_postcode; ?>" id="input-payment-postcode" class="form-control" required autocomplete="billing postal-code" />
                 </div>
                 <div class="form-group col-sm-12 required">
                     <label class="control-label" for="input-payment-country"><?php echo $entry_country; ?></label>
@@ -217,17 +205,9 @@
                     <label class="control-label" for="input-shipping-lastname"><?php echo $entry_lastname; ?></label>
                     <input type="text" name="shipping_lastname" value="<?php echo $shipping_lastname; ?>" placeholder="<?php echo $entry_lastname; ?>" id="input-shipping-lastname" class="form-control" required autocomplete="shipping family-name" />
                 </div>
-                <div class="form-group col-sm-12">
-                    <label class="control-label" for="input-shipping-company"><?php echo $entry_company; ?></label>
-                    <input type="text" name="shipping_company" value="<?php echo $shipping_company; ?>" placeholder="<?php echo $entry_company; ?>" id="input-shipping-company" class="form-control" />
-                </div>
                 <div class="form-group col-sm-12 required">
                     <label class="control-label" for="input-shipping-address-1"><?php echo $entry_address_1; ?></label>
                     <input type="text" name="shipping_address_1" value="<?php echo $shipping_address_1; ?>" placeholder="<?php echo $entry_address_1; ?>" id="input-shipping-address-1" class="form-control" required autocomplete="shipping street-address" />
-                </div>
-                <div class="form-group col-sm-12">
-                    <label class="control-label" for="input-shipping-address-2"><?php echo $entry_address_2; ?></label>
-                    <input type="text" name="shipping_address_2" value="<?php echo $shipping_address_2; ?>" placeholder="<?php echo $entry_address_2; ?>" id="input-shipping-address-2" class="form-control" />
                 </div>
                 <div class="form-group col-sm-12 required">
                     <label class="control-label" for="input-shipping-city"><?php echo $entry_city; ?></label>
