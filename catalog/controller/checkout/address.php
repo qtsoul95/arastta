@@ -346,10 +346,10 @@ class ControllerCheckoutAddress extends Controller
         if ($this->request->post[$prefix.'_country_id'] == '') {
             $json['error'][$prefix.'_country'] = $this->language->get('error_country');
         }
-
-        if (!isset($this->request->post[$prefix.'_zone_id']) || $this->request->post[$prefix.'_zone_id'] == '') {
-            $json['error'][$prefix.'_zone'] = $this->language->get('error_zone');
-        }
+//
+//        if (!isset($this->request->post[$prefix.'_zone_id']) || $this->request->post[$prefix.'_zone_id'] == '') {
+//            $json['error'][$prefix.'_zone'] = $this->language->get('error_zone');
+//        }
 
         // Custom field validation
         $this->load->model('account/custom_field');

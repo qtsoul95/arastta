@@ -52,7 +52,7 @@
                 </div>
                 <div class="form-group col-sm-12 required">
                     <label class="control-label" for="input-payment-country"><?php echo $entry_country; ?></label>
-                    <select name="payment_country_id" id="input-payment-country" class="form-control" required autocomplete="billing country">
+                    <select name="payment_country_id" id="input-payment-country" class="form-control" required disabled autocomplete="billing country">
                         <option value=""><?php echo $text_select; ?></option>
                         <?php foreach ($countries as $country) { ?>
                         <?php if ($country['country_id'] == $payment_country_id) { ?>
@@ -63,11 +63,11 @@
                         <?php } ?>
                     </select>
                 </div>
-                <div class="form-group col-sm-12 required">
-                    <label class="control-label" for="input-payment-zone"><?php echo $entry_zone; ?></label>
-                    <select name="payment_zone_id" id="input-payment-zone" class="form-control" required autocomplete="billing region">
-                    </select>
-                </div>
+<!--                <div class="form-group col-sm-12 required">-->
+<!--                    <label class="control-label" for="input-payment-zone">--><?php //echo $entry_zone; ?><!--</label>-->
+<!--                    <select name="payment_zone_id" id="input-payment-zone" class="form-control" required autocomplete="billing region">-->
+<!--                    </select>-->
+<!--                </div>-->
                 <?php foreach ($custom_fields as $custom_field) { ?>
                 <?php if ($custom_field['location'] == 'address') { ?>
                 <?php if ($custom_field['type'] == 'select') { ?>
