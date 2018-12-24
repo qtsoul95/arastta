@@ -1,6 +1,6 @@
 <div class="module <?php echo $type; ?><?php echo ($module_class) ? ' ' . $module_class : ''; ?>">
     <?php if ($show_title) { ?>
-    <h3 class="module-title"><span><?php echo !empty($title) ? $title : $heading_title; ?></span></h3>
+    <div class="products-title"><h3 class="module-title"><span><?php echo !empty($title) ? $title : $heading_title; ?></span></h3></div>
     <?php } ?>
     <div class="row">
         <?php foreach ($products as $product) { ?>
