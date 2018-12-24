@@ -1,6 +1,7 @@
 <footer>
     <div class="container">
         <div class="row">
+            <?php if ($logged) { ?>
             <?php if ($informations) { ?>
             <div class="col-sm-3">
                 <h5><?php echo $text_information; ?></h5>
@@ -37,6 +38,7 @@
                     <li><a href="<?php echo $newsletter; ?>"><?php echo $text_newsletter; ?></a></li>
                 </ul>
             </div>
+            <?php } ?>
         </div>
         <hr>
         <p><?php echo $powered; ?></p>
