@@ -1,18 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 body {
     font-family: Roboto-Regular, 'Open Sans', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     font-weight: 400;
-    color: #666;
+    color: #999;
+    background: #f5f5f5;
     font-size: 14px;
     line-height: 20px;
     width: 100%;
     margin: auto;
-    background-color: #f5f5f5;
 }
 header {
     margin: 0 0 20px;
-    padding: 20px 0;
 }
 h1, h2, h3, h4, h5, h6 {
     color: #444;
@@ -116,11 +119,46 @@ div.required .control-label:before {
 }
 
 /* top */
+.site-nav {
+    position: relative;
+    z-index: 99999;
+    background-color: #003e52;
+    background-image: -webkit-linear-gradient(left,#003e52 50%,#0d6d85 87%,#1a9cb7 100%);
+    background-image: linear-gradient(90deg,#003e52 50%,#0d6d85 87%,#1a9cb7 100%);
+}
+.header-navbar {
+    background: rgba(33,33,33,.25);
+    height: 25px;
+    text-align: right;
+}
+.logo-bar {
+    height: 75px;
+    padding-top: 11px;
+    box-sizing: border-box;
+}
+.logo-bar .logobar-content {
+    position: relative;
+}
+.logo-bar .logo-content {
+    width: 200px;
+    height: 30px;
+    display: inline-block;
+}
+.logo-bar .logo-content img {
+    width: 150px;
+    height: 40px;
+}
+.header .nav-search {
+    display: inline-block;
+    height: 45px;
+    line-height: 45px;
+    background-color: #fff;
+    border-radius: 3px;
+}
 #top {
     background-color: #EEEEEE;
-    padding: 5px 0;
     margin: 0 0 20px 0;
-    min-height: 40px;
+    min-height: 30px;
 }
 #top .container {
     padding: 0 20px;
@@ -157,9 +195,6 @@ div.required .control-label:before {
 #top .btn-link strong {
     font-size: 14px;
     line-height: 14px;
-}
-#top-links {
-    padding-top: 6px;
 }
 #top-links a + a {
     margin-left: 15px;
@@ -200,7 +235,7 @@ div.required .control-label:before {
 }
 #search .ajaxadvance {
     min-height: 50px;
-}   
+}
 #search .ajaxadvance .name {
     margin:0;
     font-size: 21px;
