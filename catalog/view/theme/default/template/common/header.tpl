@@ -30,8 +30,11 @@
     <link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
     <script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css" />
+    <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=vietnamese" rel="stylesheet">
     <link href="catalog/view/theme/default/stylesheet/stylesheet.css" rel="stylesheet">
+    <link href="catalog/view/theme/default/stylesheet/custom.stylesheet.css" rel="stylesheet">
     <?php foreach ($styles as $style) { ?>
     <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
     <?php } ?>
@@ -82,85 +85,163 @@
     <?php echo $google_analytics; ?>
 </head>
 <body class="<?php echo $class; ?>">
-<header class="header site-nav">
-    <nav class="header-navbar">
+<header class="header">
+    <div class="topbar">
         <div class="container">
-            <?php echo $currency; ?>
-            <?php echo $language; ?>
-            <div id="top-links" class="nav pull-right">
-                <ul class="list-inline">
-                    <li><a href="<?php echo $contact; ?>"><i class="fa fa-phone"></i></a> <span class="hidden-xs hidden-sm hidden-md"><?php echo $telephone; ?></span></li>
-                    <?php if ($settings_login_customer) { ?>
-                        <li class="dropdown"><a href="<?php echo $account; ?>" title="<?php echo $text_account; ?>" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_account; ?></span> <span class="caret"></span></a>
-                            <ul class="dropdown-menu dropdown-menu-right">
-                                <?php if ($logged) { ?>
-                                    <li><a href="<?php echo $account; ?>"><?php echo $text_account; ?></a></li>
-                                    <li><a href="<?php echo $order; ?>"><?php echo $text_order; ?></a></li>
-                                    <li><a href="<?php echo $credit; ?>"><?php echo $text_credit; ?></a></li>
-                                    <li><a href="<?php echo $download; ?>"><?php echo $text_download; ?></a></li>
-                                    <li><a href="<?php echo $logout; ?>"><?php echo $text_logout; ?></a></li>
-                                <?php } else { ?>
-                                    <li><a href="<?php echo $register; ?>"><?php echo $text_register; ?></a></li>
-                                    <li><a href="<?php echo $login; ?>"><?php echo $text_login; ?></a></li>
-                                <?php } ?>
-                            </ul>
-                        </li>
-                        <li><a href="<?php echo $wishlist; ?>" id="wishlist-total" title="<?php echo $text_wishlist; ?>"><i class="fa fa-heart"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_wishlist; ?></span></a></li>
-                    <?php } ?>
-                    <li><a href="<?php echo $shopping_cart; ?>" title="<?php echo $text_shopping_cart; ?>"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_shopping_cart; ?></span></a></li>
-                    <li><a href="<?php echo $checkout; ?>" title="<?php echo $text_checkout; ?>"><i class="fa fa-share"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $text_checkout; ?></span></a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div class="container logo-bar">
-        <div class="row logobar-content">
-            <div class="col-sm-5">
-                <div class="logo-content">
-                    <?php if ($logo) { ?>
-                    <a href="<?php echo $home; ?>"><img src="<?php echo $logo; ?>" title="<?php echo $name; ?>" alt="<?php echo $name; ?>" class="img-responsive" /></a>
-                    <?php } else { ?>
-                    <h1><a href="<?php echo $home; ?>"><?php echo $name; ?></a></h1>
-                    <?php } ?>
+            <div class="row">
+                <div class="col-lg-6 col-md-7 hidden-sm hidden-xs">
+                    <ul class="topbar-left hidden-sm hidden-xs">
+                        <li><a><?php echo "Mở cửa: 8h00 - 22h00, thứ 2 - CN hàng tuần" ?></a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 col-md-5 col-sm-12 d-list col-xs-12 topbar-right">
+                    <div class="list-inline a-center f-right">
+                        <ul>
+                            <li class="login-content">
+                                <!-- Account_options-->
+                            </li>
+                            <li class="hidden-xs"></li>
+                            <li class="hidden-xs"></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-            <div class="col-sm-4 nav-search"><?php echo $search; ?></div>
-            <div class="col-sm-3"><?php echo $cart; ?></div>
+        </div>
+    </div>
+    <div class="content-header f-left">
+        <div class="container">
+            <div class="row">
+                <div class="nav-header">
+                    <div class="header-main">
+                        <div class="menu-bar-h nav-mobile-button hidden-md hidden-lg">
+                            <a href="#">
+                                <img src="catalog/view/theme/default/image/i_menubar.png" alt="menu bar">
+                            </a>
+                        </div>
+                        <div class="col-lg-3 col-md-3">
+                            <div class="logo">
+                                <a href="/">
+                                    <img src="https://bizweb.dktcdn.net/100/311/807/themes/701136/assets/logo.png?1546939850958" alt="logo">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-xs-12 col-sm-12">
+                            <div class="header-left header-search">
+                                <form action="/search" method="get" class="input-group search-bar" role="search">
+                                    <input type="text" name="query" autocomplete="off" placeholder="Tìm kiếm sản phẩm..." class="input-group-field">
+                                    <span class="input-group-btn">
+                                        <button type="submit" class="btn icon-fallback-text">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </span>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-4 col-xs-12 no-padding-left">
+                            <div class="header-right">
+                                <div class="hotline hidden-sm">
+                                    <div class="icon-hotline">
+                                        <i class="fa fa-phone" aria-hidden="true"></i>
+                                    </div>
+                                    <div class="content-hotline">
+                                        <a href="tel:<?php echo $telephone; ?>"><?php echo $telephone; ?></a>
+                                        <span><?php echo "Hotline đặt hàng" ?></span>
+                                    </div>
+                                </div>
+                                <div class="top-cart f-right">
+                                    <div class="mini-cart text-xs-center">
+                                        <div class="heading-cart cart-header">
+                                            <a href="<?php echo $shopping_cart; ?>" title="Giỏ hàng">
+                                                <div class="icon-hotline">
+                                                    <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                                                </div>
+                                            </a>
+                                            <div class="content-cart-header">
+                                                <a class="bg_cart" href="<?php echo $shopping_cart; ?>" title="Giỏ hàng">
+                                                    (<span class="count-item count-item-pr">0</span>) <?php echo "Sản phẩm"; ?>
+                                                    <span class="text-shopping-cart"><?php echo $text_shopping_cart; ?></span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                        <div class="top-cart-content">
+                                            <ul id="cart-sidebar" class="mini-products-list count_li"><div class="no-item"><p>Không có sản phẩm nào trong giỏ hàng.</p></div></ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="top-cart f-right hidden">
+                                    <div class="mini-cart text-xs-center">
+                                        <div class="heading-cart">
+                                            <a class="bg_cart" href="<?php echo $shopping_cart; ?>" title="Giỏ hàng">
+                                                <i class="ion-android-cart"></i>
+                                                <span class="count-item count-item-pr">0</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="nav-menu-header hidden-xs hidden-sm">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-mega hidden-sm hidden-xs">
+                    <div class="menu-mega">
+                        <div class="title-menu">
+                            <span class="title_"><?php echo "Danh mục sản phẩm"; ?></span>
+                            <span class="nav-button">
+                                <span><i class="fa fa-bars" aria-hidden="true"></i></span>
+                            </span>
+                        </div>
+                        <div class="list-menu-header menu-all-site col-lg-3 col-sm-3"></div>
+                    </div>
+                </div>
+                <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+                    <div class="bg-header-nav hidden-xs hidden-sm">
+                        <div>
+                            <div class="row row-noGutter-2">
+                                <nav class="header-nav">
+                                    <ul class="item-big">
+                                        <li class="nav-item active">
+                                            <a href="/" class="a-img">
+                                                <span><?php echo "Trang chủ"; ?></span>
+                                                <span class="label_"><i class="label"></i></span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="a-img">
+                                                <span><?php echo "Giới thiệu"; ?></span>
+                                                <span class="label_"><i class="label"></i></span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="a-img">
+                                                <span><?php echo "Sản phẩm"; ?></span>
+                                                <span class="label_"><i class="label hot">hot</i></span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="a-img">
+                                                <span><?php echo "Tin tức"; ?></span>
+                                                <span class="label_"><i class="label new">new</i></span>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#" class="a-img">
+                                                <span><?php echo "Liên hệ"; ?></span>
+                                                <span class="label_"><i class="label"></i></span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </header>
-<?php if ($categories) { ?>
-<nav id="menu" class="navbar">
-    <div class="container">
-        <div class="navbar-header"><span id="category" class="visible-xs"><?php echo $text_category; ?></span>
-            <button type="button" class="btn btn-navbar navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse"><i class="fa fa-bars"></i></button>
-        </div>
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <ul class="nav navbar-nav">
-                <?php foreach ($categories as $category) { ?>
-                <?php if ($category['children']) { ?>
-                <li class="dropdown"><a href="<?php echo $category['href']; ?>" class="dropdown-toggle" data-toggle="dropdown"><?php echo $category['name']; ?></a>
-                    <div class="dropdown-menu">
-                        <div class="dropdown-inner">
-                            <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
-                            <ul class="list-unstyled">
-                                <?php foreach ($children as $child) { ?>
-                                <li><a href="<?php echo $child['href']; ?>"><?php echo $child['name']; ?></a></li>
-                                <?php } ?>
-                            </ul>
-                            <?php } ?>
-                        </div>
-                        <?php if ($category['href'] != '#') { ?>
-                        <a href="<?php echo $category['href']; ?>" class="see-all"><?php echo $text_all; ?> <?php echo $category['name']; ?></a>
-                        <?php } ?>
-                    </div>
-                </li>
-                <?php } else { ?>
-                <li><a href="<?php echo $category['href']; ?>"><?php echo $category['name']; ?></a></li>
-                <?php } ?>
-                <?php } ?>
-            </ul>
-        </div>
-    </div>
-</nav>
-<?php } ?>
