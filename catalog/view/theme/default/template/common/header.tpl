@@ -33,7 +33,7 @@
     <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet" type="text/css">
     <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=vietnamese" rel="stylesheet">
-    <link href="catalog/view/theme/default/stylesheet/stylesheet.css" rel="stylesheet">
+<!--    <link href="catalog/view/theme/default/stylesheet/stylesheet.css" rel="stylesheet">-->
     <link href="catalog/view/theme/default/stylesheet/custom.stylesheet.css" rel="stylesheet">
     <?php foreach ($styles as $style) { ?>
     <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
