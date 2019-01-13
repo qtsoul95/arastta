@@ -20,7 +20,7 @@ body,input,textarea,button,select {
 }
 body {
     font-size: 14px;
-    color: #444;
+    background: #f1f1f1;
     overflow-x: hidden
 }
 header nav {
@@ -74,6 +74,14 @@ img {
     border: 0 none;
     max-width: 100%;
     height: auto
+}
+.clearfix {
+    *zoom:1
+}
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both
 }
 .a-center {
      text-align: center !important
@@ -1363,4 +1371,56 @@ footer .list-menu .li_menu a:hover {
         left: 30px
     }
 }
-ßß
+.title-top-menu h3 {
+    margin: 0;
+    padding: 10px 28px 10px 28px;
+    font-size: 24px;
+    line-height: 24px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    font-weight: 400;
+    background: #eb3e32;
+    text-transform: uppercase;
+    display: inline-block
+}
+.title-top-menu h3 a {
+    color: #fff
+}
+.section-1 {
+    margin-bottom: 40px;
+}
+.slider-products {
+    margin: 20px 0;
+    padding: 10px
+}
+.collection-name-title {
+    color: #333;
+    text-decoration: none
+}
+.slider-products .see-more-products {
+    display: inline-block;
+    margin: 15px;
+}
+.slider-products .border-bottom-title {
+    margin: 0 15px;
+    position: relative
+}
+.slider-products .border-bottom-title:before {
+    position: absolute;
+    bottom: -46px;
+    left: 0;
+    width: 100%;
+    border-bottom: 2px solid #eb3e32
+}
+.slider-products .owl-carousel {
+    background: #f1f1f1;
+}
+.slider-products .item {
+    background-color: #fff;
+}
+.owl-wrapper-outer {
+    border: none
+}
+.owl-wrapper-outer .owl-item {
+    margin-right: 10px
+}
