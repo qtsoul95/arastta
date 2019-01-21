@@ -18,14 +18,28 @@
     <div class="product-items">
         <div class="owl-carousel product-owl-carousel">
             <?php foreach ($products as $product) { ?>
-                <div class="item">
+                <div class="item product-item">
                     <a href="<?php echo $product['href']; ?>" class="product-link" title="<?php echo $product['name']; ?>">
-                        <img src="<?php echo $product['thumb']; ?>" style="width: auto;" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" />
+                        <div class="product-box">
+                            <div class="product-thumbnail">
+                                <div style="background-image: url(<?php echo $product['thumb']; ?>)"></div>
+                            </div>
+                            <div class="product-info a-left">
+                                <div class="product-name">
+                                    <div><?php echo $product['name']; ?></div>
+                                </div>
+                                <div class="h-space"></div>
+                                <div class="product-price a-left">
+                                    <?php if (!$product['special']) { ?>
+                                        <div class="special-price"><?php echo $product['price']; ?></div>
+                                    <?php } else { ?>
+                                        <div class="special-price"><?php echo $product['special']; ?></div>
+                                        <div class="old-price"><?php echo $product['price']; ?></div>
+                                    <?php } ?>
+                                </div>
+                            </div>
+                        </div>
                     </a>
-                    <div>
-                        <h3 class="product-name"><?php echo $product['name']; ?></h3>
-                        <div class="product-price"><?php echo $product['price']; ?></div>
-                    </div>
                 </div>
             <?php } ?>
         </div>
@@ -35,8 +49,8 @@
     if($(window).width() > 767) {
         $('.product-owl-carousel').each(function(){
             $(this).owlCarousel({
-                items: 6,
-                slideBy: 6,
+                items: 5,
+                slideBy: 5,
                 dots: false,
                 margin: 10,
                 nav: true,
