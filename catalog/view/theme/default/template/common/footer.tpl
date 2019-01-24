@@ -6,11 +6,11 @@
                     <div class="col-xs-12 col-sm-6 col-md-21 col-lg-21">
                         <div class="widget-ft first">
                             <h4 class="title-menu">
-                                <a role="button" data-toggle="collapse" aria-expanded="true" data-target="#collapseListMenu01" aria-controls="collapseListMenu01">
+                                <a role="button" class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#collapseListMenu01" aria-controls="collapseListMenu01">
                                     <?php echo "Giới thiệu" ?><i class="fa fa-plus" aria-hidden="true"></i>
                                 </a>
                             </h4>
-                            <div class="collapse in" id="collapseListMenu01" aria-expanded="true" style="">
+                            <div class="collapse" id="collapseListMenu01">
                                 <ul class="list-menu">
                                     <li class="li_menu"><a href="/">Trang chủ</a></li>
                                     <li class="li_menu"><a href="/gioi-thieu">Giới thiệu</a></li>

@@ -30,6 +30,7 @@
     <link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
     <script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="catalog/view/javascript/jquery/owl-carousel/owl.carousel.js" type="text/javascript"></script>
+    <script src="catalog/view/theme/default/javascript/main.js" type="application/javascript"></script>
     <link rel="stylesheet" href="catalog/view/javascript/jquery/owl-carousel/owl.carousel.css">
     <link rel="stylesheet" href="catalog/view/javascript/jquery/owl-carousel/owl.transitions.css">
     <link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
