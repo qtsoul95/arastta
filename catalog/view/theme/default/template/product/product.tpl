@@ -87,7 +87,7 @@
                                 </div>
                             </div>
                             <div class="form-product col-sm-12">
-                                <form enctype="multipart/form-data" id="add-to-cart-form" action="/cart/add" method="post" class="form-inline margin-bottom-0">
+                                <form enctype="multipart/form-data" id="add-to-cart-form" action="" method="post" class="form-inline margin-bottom-0">
                                     <div class="box-variant clearfix">
                                         <input type="hidden" name="variantId" value="18605697">
                                     </div>
@@ -100,9 +100,10 @@
                                                     <input type="text" id="qtym" name="quantity" value="1" onkeyup="validateNumber(event)" onkeypress="validateNumber(event)" class="form-control prd_quantity">
                                                     <button class="btn_num num_2 button button_qty" onclick="var result = document.getElementById('qtym'); var qtypro = result.value; if( !isNaN( qtypro )) result.value++;return false;" type="button">+</button>
                                                 </div>
+                                                <input type="hidden" name="product_id" value="<?php echo $product_id; ?>" />
                                             </div>
                                             <div class="button_actions clearfix">
-                                                <button type="submit" class="btn btn_base btn_add_cart btn-cart add_to_cart">
+                                                <button type="submit" class="btn btn_base btn_add_cart btn-cart add_to_cart" id="button-cart">
                                                     <span class="text_1">MUA NGAY</span>
                                                     <span class="text_2">Giao hàng miễn phí tận nơi</span>
                                                 </button>
@@ -261,6 +262,51 @@
         autoplayHoverPause:true,
         loop: false,
 
+    });
+    $('#button-cart').on('click', function(e) {
+        e.preventDefault();
+        var form = $(this).parents('form');
+        $.ajax({
+            url: 'index.php?route=checkout/cart/add',
+            type: 'post',
+            data: form.serialize(),
+            dataType: 'json',
+            beforeSend: function() {
+                $('#button-cart').button('loading');
+            },
+            complete: function() {
+                $('#button-cart').button('reset');
+            },
+            success: function(json) {
+                $('.alert, .text-danger').remove();
+                $('.form-group').removeClass('has-error');
+
+                if (json['error']) {
+                    if (json['error']['option']) {
+                        for (i in json['error']['option']) {
+                            var element = $('#input-option' + i.replace('_', '-'));
+
+                            if (element.parent().hasClass('input-group')) {
+                                element.parent().after('<div class="text-danger">' + json['error']['option'][i] + '</div>');
+                            } else {
+                                element.after('<div class="text-danger">' + json['error']['option'][i] + '</div>');
+                            }
+                        }
+                    }
+
+                    if (json['error']['recurring']) {
+                        $('select[name=\'recurring_id\']').after('<div class="text-danger">' + json['error']['recurring'] + '</div>');
+                    }
+
+                    // Highlight any found errors
+                    $('.text-danger').parent().addClass('has-error');
+                }
+
+                if (json['success']) {
+                    cart.after('add', json);
+                }
+            }
+        });
     });
 </script>
 <?php echo $footer; ?>

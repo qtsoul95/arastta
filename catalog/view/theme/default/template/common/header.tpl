@@ -153,24 +153,7 @@
                                     </div>
                                 </div>
                                 <div class="top-cart f-right">
-                                    <div class="mini-cart text-xs-center">
-                                        <div class="heading-cart cart-header">
-                                            <a href="<?php echo $shopping_cart; ?>" title="Giỏ hàng">
-                                                <div class="icon-hotline">
-                                                    <i class="fa fa-shopping-basket" aria-hidden="true"></i>
-                                                </div>
-                                            </a>
-                                            <div class="content-cart-header">
-                                                <a class="bg_cart" href="<?php echo $shopping_cart; ?>" title="Giỏ hàng">
-                                                    (<span class="count-item count-item-pr">0</span>) <?php echo "Sản phẩm"; ?>
-                                                    <span class="text-shopping-cart"><?php echo $text_shopping_cart; ?></span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="top-cart-content">
-                                            <ul id="cart-sidebar" class="mini-products-list count_li"><div class="no-item"><p>Không có sản phẩm nào trong giỏ hàng.</p></div></ul>
-                                        </div>
-                                    </div>
+                                    <?php echo $cart; ?>
                                 </div>
                                 <div class="top-cart f-right hidden">
                                     <div class="mini-cart text-xs-center">

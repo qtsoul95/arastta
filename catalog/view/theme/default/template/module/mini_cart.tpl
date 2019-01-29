@@ -62,18 +62,18 @@
             <?php } ?>
             <div class="buttons" style="min-height: 15px">
                 <?php if ($setting['button_continue']) { ?>
-                <div class="pull-left">
-                    <a class="button-continue hidden" data-dismiss="modal" aria-hidden="true"><strong><b><i class="fa fa-angle-right"></i></b> <?php echo $button_shopping; ?></strong></a>
+                <div class="clearfix">
+                    <a class="button button-continue hidden" data-dismiss="modal" aria-hidden="true"><strong><b><i class="fa fa-angle-right"></i></b> <?php echo $button_shopping; ?></strong></a>
                 </div>
                 <?php } ?>
                 <?php if ($setting['button_cart'] || $setting['button_checkout']) { ?>
-                <div class="pull-right">
+                <div class="clearfix">
                     <?php if ($setting['button_cart']) { ?>
-                    <a class="hidden-xs" href="<?php echo $cart; ?>"><strong><i class="fa fa-shopping-cart"></i> <?php echo $text_cart; ?></strong></a>
+                    <a class="button hidden-xs btn-view-cart" href="<?php echo $cart; ?>"><strong><i class="fa fa-shopping-cart"></i> <?php echo $text_cart; ?></strong></a>
                     <?php } ?>
                     &nbsp;&nbsp;&nbsp;
                     <?php if ($setting['button_checkout']) { ?>
-                    <a href="<?php echo $checkout; ?>"><strong><i class="fa fa-share"></i> <?php echo $text_checkout; ?></strong></a>
+                    <a class="button btn-checkout" href="<?php echo $checkout; ?>"><strong><i class="fa fa-share"></i> <?php echo $text_checkout; ?></strong></a>
                     <?php } ?>
                 </div>
                 <?php } ?>
