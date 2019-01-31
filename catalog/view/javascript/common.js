@@ -422,10 +422,14 @@ var cart = {
 
         // Need to set timeout otherwise it wont update the total
         setTimeout(function () {
-            $('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+            $('.top-cart .count-item.count-item-pr').each(function(){
+                $(this).html(json['total']);
+            })
         }, 100);
 
-        $('#cart > ul').load('index.php?route=common/cart/info ul li');
+        $('.top-cart .top-cart-content').each(function(){
+            $(this).load('index.php?route=common/cart/info ul#cart-sidebar');
+        });
 
         $.each($('.module-cart'), function(i, module) {
             cart_id = $(module).attr('id');
@@ -434,7 +438,7 @@ var cart = {
             $('#' + cart_id).load('index.php?route=module/cart/info' + module_cart_path + ' #' + cart_id + ' >');
         });
     }
-}
+};
 
 var voucher = {
     'add': function() {
