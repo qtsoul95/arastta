@@ -1,10 +1,29 @@
 <?php echo $header; ?>
 <div class="container">
-    <ul class="breadcrumb">
-        <?php foreach ($breadcrumbs as $breadcrumb) { ?>
-        <li><a href="<?php echo $breadcrumb['href']; ?>"><?php echo $breadcrumb['text']; ?></a></li>
-        <?php } ?>
-    </ul>
+    <section class="bread-crumb">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul class="breadcrumb" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                        <?php foreach ($breadcrumbs as $key=>$breadcrumb) { ?>
+                            <li>
+                                <?php if ($key == count($breadcrumbs) - 1) { ?>
+                                    <strong><span itemprop="title"><?php echo $breadcrumb['text']; ?></span></strong>
+                                <?php } else { ?>
+                                    <a itemprop="url" href="<?php echo $breadcrumb['href']; ?>">
+                                        <span itemprop="title"><?php echo $breadcrumb['text']; ?></span>
+                                    </a>
+                                    <span>
+                                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                                </span>
+                                <?php } ?>
+                            </li>
+                        <?php } ?>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
     <?php if ($success) { ?>
     <div class="alert alert-success"><i class="fa fa-check-circle"></i> <?php echo $success; ?>
         <button type="button" class="close" data-dismiss="alert">&times;</button>

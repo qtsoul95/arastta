@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-sm-12">
-        <fieldset id="account">
+        <fieldset id="account" class="checkout-guest">
             <legend><?php echo $text_guest_details; ?></legend>
             <div class="form-group col-sm-6" style="display: <?php echo (count($customer_groups) > 1 ? 'block' : 'none'); ?>;">
                 <label class="control-label"><?php echo $entry_customer_group; ?></label>
@@ -35,10 +35,6 @@
             <div class="form-group col-sm-6 required">
                 <label class="control-label" for="input-guest-telephone"><?php echo $entry_telephone; ?></label>
                 <input type="text" name="telephone" value="<?php echo $telephone; ?>" placeholder="<?php echo $entry_telephone; ?>" id="input-guest-telephone" class="form-control" required autocomplete="tel" />
-            </div>
-            <div class="form-group col-sm-6">
-                <label class="control-label" for="input-guest-fax"><?php echo $entry_fax; ?></label>
-                <input type="text" name="fax" value="<?php echo $fax; ?>" placeholder="<?php echo $entry_fax; ?>" id="input-guest-fax" class="form-control" />
             </div>
             <?php foreach ($custom_fields as $custom_field) { ?>
             <?php if ($custom_field['location'] == 'account') { ?>

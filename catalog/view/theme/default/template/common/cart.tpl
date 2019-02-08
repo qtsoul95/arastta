@@ -6,7 +6,7 @@
             </div>
         </a>
         <div class="content-cart-header">
-            <a class="bg_cart" href="<?php echo $shopping_cart; ?>" title="Giỏ hàng">
+            <a class="bg_cart" href="<?php echo $cart; ?>" title="Giỏ hàng">
                 (<span class="count-item count-item-pr"><?php echo $text_items; ?></span>) <?php echo "Sản phẩm"; ?>
                 <span class="text-shopping-cart"><?php echo $text_shopping_cart; ?></span>
             </a>

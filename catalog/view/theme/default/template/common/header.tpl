@@ -1,90 +1,97 @@
 <!DOCTYPE html>
 <!--[if IE]><![endif]-->
-<!--[if IE 8 ]><html dir="<?php echo $direction; ?>" lang="<?php echo $lang; ?>" class="ie8"><![endif]-->
-<!--[if IE 9 ]><html dir="<?php echo $direction; ?>" lang="<?php echo $lang; ?>" class="ie9"><![endif]-->
+<!--[if IE 8 ]>
+<html dir="<?php echo $direction; ?>" lang="<?php echo $lang; ?>" class="ie8"><![endif]-->
+<!--[if IE 9 ]>
+<html dir="<?php echo $direction; ?>" lang="<?php echo $lang; ?>" class="ie9"><![endif]-->
 <!--[if (gt IE 9)|!(IE)]><!-->
 <html dir="<?php echo $direction; ?>" lang="<?php echo $lang; ?>">
 <!--<![endif]-->
 <head>
-    <meta charset="UTF-8" />
+    <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><?php echo $title; ?></title>
-    <base href="<?php echo $base; ?>" />
+    <base href="<?php echo $base; ?>"/>
     <?php if ($description) { ?>
-    <meta name="description" content="<?php echo $description; ?>" />
+        <meta name="description" content="<?php echo $description; ?>"/>
     <?php } ?>
     <?php if ($keywords) { ?>
-    <meta name="keywords" content= "<?php echo $keywords; ?>" />
+        <meta name="keywords" content="<?php echo $keywords; ?>"/>
     <?php } ?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <?php if ($icon) { ?>
-    <link href="<?php echo $icon; ?>" rel="icon" />
+        <link href="<?php echo $icon; ?>" rel="icon"/>
     <?php } ?>
     <?php foreach ($metas as $meta) { ?>
-    <meta name="<?php echo $meta['name']; ?>" content="<?php echo $meta['content']; ?>" />
+        <meta name="<?php echo $meta['name']; ?>" content="<?php echo $meta['content']; ?>"/>
     <?php } ?>
     <?php foreach ($links as $link) { ?>
-    <link href="<?php echo $link['href']; ?>" rel="<?php echo $link['rel']; ?>" />
+        <link href="<?php echo $link['href']; ?>" rel="<?php echo $link['rel']; ?>"/>
     <?php } ?>
     <script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
-    <link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen" />
+    <link href="catalog/view/javascript/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen"/>
     <script src="catalog/view/javascript/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="catalog/view/javascript/jquery/owl-carousel/owl.carousel.js" type="text/javascript"></script>
     <script src="catalog/view/theme/default/javascript/main.js" type="application/javascript"></script>
     <link rel="stylesheet" href="catalog/view/javascript/jquery/owl-carousel/owl.carousel.css">
     <link rel="stylesheet" href="catalog/view/javascript/jquery/owl-carousel/owl.transitions.css">
-    <link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
     <link href="//fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet" type="text/css">
     <link href="//fonts.googleapis.com/css?family=Open+Sans:400,600,700,800" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=vietnamese" rel="stylesheet">
-<!--    <link href="catalog/view/theme/default/stylesheet/stylesheet.css" rel="stylesheet">-->
+    <!--    <link href="catalog/view/theme/default/stylesheet/stylesheet.css" rel="stylesheet">-->
     <link href="catalog/view/theme/default/stylesheet/custom.stylesheet.css" rel="stylesheet">
     <?php foreach ($styles as $style) { ?>
-    <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
+        <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>"
+              media="<?php echo $style['media']; ?>"/>
     <?php } ?>
     <?php if ($style_declarations) { ?>
-    <?php foreach ($style_declarations as $style_declaration) { ?>
-    <?php if ($style_declaration['add_tag']) { ?>
-    <style type="<?php echo $style_declaration['type']; ?>">
-        <?php } ?>
+        <?php foreach ($style_declarations as $style_declaration) { ?>
+            <?php if ($style_declaration['add_tag']) { ?>
+                <style type="<?php echo $style_declaration['type']; ?>">
+            <?php } ?>
         <?php echo $style_declaration['content']; ?>
         <?php if ($style_declaration['add_tag']) { ?>
-    </style>
-    <?php } ?>
-    <?php } ?>
+            </style>
+        <?php } ?>
+        <?php } ?>
     <?php } ?>
     <?php if ($theme_config) { ?>
-    <style type="text/css">
-    <?php if ($theme_config->get('menu_show_all')) { ?>
-    #menu .see-all { display: none !important;}
-    <?php } ?>
-    <?php if ($theme_config->get('refine_shearch_show')) { ?>
-    body[class*="product-category"] #content.col-sm-12 h3,
-    body[class*="product-category"] #content.col-sm-12 h3 + .row,
-    body[class*="product-category"] #content.col-sm-9 h3,
-    body[class*="product-category"] #content.col-sm-9 h3 + .row,
-    body[class*="product-category"] #content.col-sm-6 h3,
-    body[class*="product-category"] #content.col-sm-6 h3 + .row {
-        display: none;
-    }
-    <?php } ?>
-    </style>
+        <style type="text/css">
+            <?php if ($theme_config->get('menu_show_all')) { ?>
+            #menu .see-all {
+                display: none !important;
+            }
+
+            <?php } ?>
+            <?php if ($theme_config->get('refine_shearch_show')) { ?>
+            body[class*="product-category"] #content.col-sm-12 h3,
+            body[class*="product-category"] #content.col-sm-12 h3 + .row,
+            body[class*="product-category"] #content.col-sm-9 h3,
+            body[class*="product-category"] #content.col-sm-9 h3 + .row,
+            body[class*="product-category"] #content.col-sm-6 h3,
+            body[class*="product-category"] #content.col-sm-6 h3 + .row {
+                display: none;
+            }
+
+            <?php } ?>
+        </style>
     <?php } ?>
     <script src="catalog/view/javascript/common.js" type="text/javascript"></script>
     <script src="catalog/view/javascript/arastta.js" type="text/javascript"></script>
     <?php foreach ($scripts as $script) { ?>
-    <script src="<?php echo $script; ?>" type="text/javascript"></script>
+        <script src="<?php echo $script; ?>" type="text/javascript"></script>
     <?php } ?>
     <?php if ($script_declarations) { ?>
-    <?php foreach ($script_declarations as $script_declaration) { ?>
-    <?php if ($script_declaration['add_tag']) { ?>
-    <script type="<?php echo $script_declaration['type']; ?>">
-    <?php } ?>
-    <?php echo $script_declaration['content']; ?>
-    <?php if ($script_declaration['add_tag']) { ?>
-    </script>
-    <?php } ?>
-    <?php } ?>
+        <?php foreach ($script_declarations as $script_declaration) { ?>
+            <?php if ($script_declaration['add_tag']) { ?>
+            <script type="<?php echo $script_declaration['type']; ?>">
+                <?php } ?>
+                <?php echo $script_declaration['content']; ?>
+                <?php if ($script_declaration['add_tag']) { ?>
+            </script>
+        <?php } ?>
+        <?php } ?>
     <?php } ?>
     <?php echo $google_analytics; ?>
 </head>
@@ -125,14 +132,16 @@
                         <div class="col-lg-3 col-md-3">
                             <div class="logo">
                                 <a href="/">
-                                    <img src="https://bizweb.dktcdn.net/100/311/807/themes/701136/assets/logo.png?1546939850958" alt="logo">
+                                    <img src="https://bizweb.dktcdn.net/100/311/807/themes/701136/assets/logo.png?1546939850958"
+                                         alt="logo">
                                 </a>
                             </div>
                         </div>
                         <div class="col-lg-5 col-md-5 col-xs-12 col-sm-12">
                             <div class="header-left header-search">
                                 <form action="/search" method="get" class="input-group search-bar" role="search">
-                                    <input type="text" name="query" autocomplete="off" placeholder="Tìm kiếm sản phẩm..." class="input-group-field">
+                                    <input type="text" name="query" autocomplete="off"
+                                           placeholder="Tìm kiếm sản phẩm..." class="input-group-field">
                                     <span class="input-group-btn">
                                         <button type="submit" class="btn icon-fallback-text">
                                             <i class="fa fa-search"></i>
@@ -177,13 +186,54 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-mega hidden-sm hidden-xs">
                     <div class="menu-mega">
-                        <div class="title-menu">
-                            <span class="title_"><?php echo "Danh mục sản phẩm"; ?></span>
-                            <span class="nav-button">
-                                <span><i class="fa fa-bars" aria-hidden="true"></i></span>
-                            </span>
-                        </div>
-                        <div class="list-menu-header menu-all-site col-lg-3 col-sm-3"></div>
+                        <?php if ($categories) { ?>
+                            <div class="title-menu">
+                                <span class="title_"><?php echo $text_category; ?></span>
+                                <span class="nav-button">
+                                    <span><i class="fa fa-bars" aria-hidden="true"></i></span>
+                                </span>
+                            </div>
+                            <div class="list-menu-header menu-all-site col-lg-3 col-sm-3">
+                                <ul class="ul_menu site-nav-vetical">
+                                    <?php foreach ($categories as $category) { ?>
+                                        <?php if ($category['children']) { ?>
+                                            <li class="nav_item lv1 li_check">
+                                            <a href="<?php echo $category['href']; ?>"
+                                               title="<?php echo $category['name']; ?>">
+                                                <?php echo $category['name']; ?>
+                                                <i class="fa fa-angle-right"></i>
+                                            </a>
+                                            <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
+                                                <ul class="ul_content_right_1 row">
+                                                    <?php foreach ($children as $child) { ?>
+                                                        <li class="nav_item lv2 col-lg-3 col-md-3">
+                                                            <a href="<?php echo $child['href']; ?>"
+                                                               title="<?php echo $child['name']; ?>"><?php echo $child['name']; ?></a>
+                                                        </li>
+                                                    <?php } ?>
+                                                </ul>
+                                            <?php } ?>
+                                            <?php if ($category['href'] != '#') { ?>
+                                                <li class="nav_item lv2 col-lg-3 col-md-3 xemthem">
+                                                    <a href="<?php echo $category['href']; ?>"
+                                                       title="<?php echo $text_all; ?> <?php echo $category['name']; ?>">
+                                                        <?php echo $text_all; ?><?php echo $category['name']; ?>
+                                                    </a>
+                                                </li>
+                                            <?php } ?>
+                                            </li>
+                                        <?php } else { ?>
+                                            <li class="nav_item lv1 li_check">
+                                                <a href="<?php echo $category['href']; ?>"
+                                                   title="<?php echo $category['name']; ?>">
+                                                    <?php echo $category['name']; ?>
+                                                </a>
+                                            </li>
+                                        <?php } ?>
+                                    <?php } ?>
+                                </ul>
+                            </div>
+                        <?php } ?>
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
