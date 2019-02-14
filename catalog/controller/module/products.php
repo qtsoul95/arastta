@@ -46,6 +46,7 @@ class ControllerModuleProducts extends Controller
                 break;
         }
 
+        $data['category_href']       = $this->url->link('product/category', 'path=' . $setting['category'][0]);
         $data['type']                = $setting['type'];
         $data['title']               = $setting['title'];
         $data['show_title']          = $setting['show_title'];

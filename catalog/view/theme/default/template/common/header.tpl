@@ -39,6 +39,8 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&amp;subset=vietnamese" rel="stylesheet">
 <!--    <link href="catalog/view/theme/default/stylesheet/stylesheet.css" rel="stylesheet">-->
     <link href="catalog/view/theme/default/stylesheet/custom.stylesheet.css" rel="stylesheet">
+    <link href="catalog/view/theme/default/stylesheet/base.css" rel="stylesheet">
+    <link href="catalog/view/theme/default/stylesheet/module.css" rel="stylesheet">
     <?php foreach ($styles as $style) { ?>
     <link href="<?php echo $style['href']; ?>" type="text/css" rel="<?php echo $style['rel']; ?>" media="<?php echo $style['media']; ?>" />
     <?php } ?>
@@ -177,13 +179,54 @@
             <div class="row">
                 <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 col-mega hidden-sm hidden-xs">
                     <div class="menu-mega">
-                        <div class="title-menu">
-                            <span class="title_"><?php echo "Danh mục sản phẩm"; ?></span>
-                            <span class="nav-button">
-                                <span><i class="fa fa-bars" aria-hidden="true"></i></span>
-                            </span>
-                        </div>
-                        <div class="list-menu-header menu-all-site col-lg-3 col-sm-3"></div>
+                        <?php if ($categories) { ?>
+                            <div class="title-menu">
+                                <span class="title_"><?php echo $text_category; ?></span>
+                                <span class="nav-button">
+                                    <span><i class="fa fa-bars" aria-hidden="true"></i></span>
+                                </span>
+                            </div>
+                            <div class="list-menu-header menu-all-site col-lg-3 col-sm-3">
+                                <ul class="ul_menu site-nav-vetical">
+                                    <?php foreach ($categories as $category) { ?>
+                                        <?php if ($category['children']) { ?>
+                                            <li class="nav_item lv1 li_check">
+                                            <a href="<?php echo $category['href']; ?>"
+                                               title="<?php echo $category['name']; ?>">
+                                                <?php echo $category['name']; ?>
+                                                <i class="fa fa-angle-right"></i>
+                                            </a>
+                                            <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
+                                                <ul class="ul_content_right_1 row">
+                                                    <?php foreach ($children as $child) { ?>
+                                                        <li class="nav_item lv2 col-lg-3 col-md-3">
+                                                            <a href="<?php echo $child['href']; ?>"
+                                                               title="<?php echo $child['name']; ?>"><?php echo $child['name']; ?></a>
+                                                        </li>
+                                                    <?php } ?>
+                                                </ul>
+                                            <?php } ?>
+                                            <?php if ($category['href'] != '#') { ?>
+                                                <li class="nav_item lv2 col-lg-3 col-md-3 xemthem">
+                                                    <a href="<?php echo $category['href']; ?>"
+                                                       title="<?php echo $text_all; ?> <?php echo $category['name']; ?>">
+                                                        <?php echo $text_all; ?><?php echo $category['name']; ?>
+                                                    </a>
+                                                </li>
+                                            <?php } ?>
+                                            </li>
+                                        <?php } else { ?>
+                                            <li class="nav_item lv1 li_check">
+                                                <a href="<?php echo $category['href']; ?>"
+                                                   title="<?php echo $category['name']; ?>">
+                                                    <?php echo $category['name']; ?>
+                                                </a>
+                                            </li>
+                                        <?php } ?>
+                                    <?php } ?>
+                                </ul>
+                            </div>
+                        <?php } ?>
                     </div>
                 </div>
                 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">

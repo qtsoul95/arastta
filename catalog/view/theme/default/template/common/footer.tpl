@@ -69,13 +69,12 @@
                                             <ul class="contact contact_x">
                                                 <li>
 												<span class="txt_content_child">
-													<b>Trụ sở chính:</b>
-													<?php echo "Address 1"; ?>
+													<b><?php echo $store; ?>:</b><?php echo $address; ?>
 												</span>
                                                 </li>
                                                 <li class="sdt">
-                                                    <span>Điện thoại:</span>
-                                                    <a href="tel:1234567890">1234567890</a>
+                                                    <span><?php echo $text_telephone; ?>:</span>
+                                                    <a href="tel:<?php echo $telephone; ?>"><?php echo $telephone; ?></a>
                                                 </li>
                                                 <li class="line">-</li>
                                                 <li class="sdt">
@@ -84,25 +83,25 @@
                                                 </li>
                                             </ul>
                                         </div>
-                                        <div class="item">
-                                            <ul class="contact contact_x">
-                                                <li>
-												<span class="txt_content_child">
-													<b>Chi nhánh:</b>
-													<?php echo "Address 2"; ?>
-												</span>
-                                                </li>
-                                                <li class="sdt">
-                                                    <span>Điện thoại:</span>
-                                                    <a href="tel:1234567890">1234567890</a>
-                                                </li>
-                                                <li class="line">-</li>
-                                                <li class="sdt">
-                                                    <span>Email:</span>
-                                                    <a href="mailto:test@example">test@example</a>
-                                                </li>
-                                            </ul>
-                                        </div>
+<!--                                        <div class="item">-->
+<!--                                            <ul class="contact contact_x">-->
+<!--                                                <li>-->
+<!--												<span class="txt_content_child">-->
+<!--													<b>Chi nhánh:</b>-->
+<!--													--><?php //echo "Address 2"; ?>
+<!--												</span>-->
+<!--                                                </li>-->
+<!--                                                <li class="sdt">-->
+<!--                                                    <span>Điện thoại:</span>-->
+<!--                                                    <a href="tel:1234567890">1234567890</a>-->
+<!--                                                </li>-->
+<!--                                                <li class="line">-</li>-->
+<!--                                                <li class="sdt">-->
+<!--                                                    <span>Email:</span>-->
+<!--                                                    <a href="mailto:test@example">test@example</a>-->
+<!--                                                </li>-->
+<!--                                            </ul>-->
+<!--                                        </div>-->
                                     </div>
                                 </div>
                                 <div class="bct">

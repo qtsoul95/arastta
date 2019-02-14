@@ -3618,8 +3618,7 @@ ul.tabs li.current {
     width: 100%
 }
 .products-view-grid .grid-item {
-    padding: 0;
-    margin-right: 10px
+    padding: 0 10px 0 0;
 }
 .products-view-list .item_list:first-child .product-box-h {
     padding-top: 0
