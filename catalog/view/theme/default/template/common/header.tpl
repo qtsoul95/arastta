@@ -8,6 +8,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#2d8830">
     <title><?php echo $title; ?></title>
     <base href="<?php echo $base; ?>" />
     <?php if ($description) { ?>
@@ -191,29 +192,29 @@
                                     <?php foreach ($categories as $category) { ?>
                                         <?php if ($category['children']) { ?>
                                             <li class="nav_item lv1 li_check">
-                                            <a href="<?php echo $category['href']; ?>"
-                                               title="<?php echo $category['name']; ?>">
-                                                <?php echo $category['name']; ?>
-                                                <i class="fa fa-angle-right"></i>
-                                            </a>
-                                            <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
-                                                <ul class="ul_content_right_1 row">
-                                                    <?php foreach ($children as $child) { ?>
-                                                        <li class="nav_item lv2 col-lg-3 col-md-3">
-                                                            <a href="<?php echo $child['href']; ?>"
-                                                               title="<?php echo $child['name']; ?>"><?php echo $child['name']; ?></a>
-                                                        </li>
-                                                    <?php } ?>
-                                                </ul>
-                                            <?php } ?>
-                                            <?php if ($category['href'] != '#') { ?>
-                                                <li class="nav_item lv2 col-lg-3 col-md-3 xemthem">
-                                                    <a href="<?php echo $category['href']; ?>"
-                                                       title="<?php echo $text_all; ?> <?php echo $category['name']; ?>">
-                                                        <?php echo $text_all; ?><?php echo $category['name']; ?>
-                                                    </a>
-                                                </li>
-                                            <?php } ?>
+                                                <a href="<?php echo $category['href']; ?>"
+                                                   title="<?php echo $category['name']; ?>">
+                                                    <?php echo $category['name']; ?>
+                                                    <i class="fa fa-angle-right"></i>
+                                                </a>
+                                                <?php foreach (array_chunk($category['children'], ceil(count($category['children']) / $category['column'])) as $children) { ?>
+                                                    <ul class="ul_content_right_1 row">
+                                                        <?php foreach ($children as $child) { ?>
+                                                            <li class="nav_item lv2 col-lg-3 col-md-3">
+                                                                <a href="<?php echo $child['href']; ?>"
+                                                                   title="<?php echo $child['name']; ?>"><?php echo $child['name']; ?></a>
+                                                            </li>
+                                                        <?php } ?>
+                                                    </ul>
+                                                <?php } ?>
+                                                <?php if ($category['href'] != '#') { ?>
+                                                    <li class="nav_item lv1">
+                                                        <a href="<?php echo $category['href']; ?>"
+                                                           title="<?php echo $text_all; ?> <?php echo $category['name']; ?>">
+                                                            <?php echo $text_all; ?><?php echo $category['name']; ?>
+                                                        </a>
+                                                    </li>
+                                                <?php } ?>
                                             </li>
                                         <?php } else { ?>
                                             <li class="nav_item lv1 li_check">

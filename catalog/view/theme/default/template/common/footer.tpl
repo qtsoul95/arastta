@@ -25,7 +25,7 @@
                         <div class="widget-ft">
                             <h4 class="title-menu">
                                 <a role="button" class="collapsed" data-toggle="collapse" aria-expanded="false" data-target="#collapseListMenu02" aria-controls="collapseListMenu02">
-                                    Chính sách công ty <i class="fa fa-plus" aria-hidden="true"></i>
+                                    Chính sách bán hàng <i class="fa fa-plus" aria-hidden="true"></i>
                                 </a>
                             </h4>
                             <div class="collapse time_work" id="collapseListMenu02">
@@ -60,40 +60,21 @@
                     <div class="col-xs-12 col-sm-6 col-md-23 col-lg-23">
                         <div class="widget-ft last">
                             <h4 class="title-menu">
-                                <a><?php echo "Company name"; ?></a>
+                                <a><?php echo "Liên hệ"; ?></a>
                             </h4>
                             <div>
                                 <div class="list-menu">
-                                    <div class="widget-db">
-                                        <div class="item">
-                                            <ul class="contact contact_x">
-                                                <li>
-												<span class="txt_content_child">
-													<b><?php echo $store; ?>:</b><?php echo $address; ?>
-												</span>
-                                                </li>
-                                                <li class="sdt">
-                                                    <span><?php echo $text_telephone; ?>:</span>
-                                                    <a href="tel:<?php echo $telephone; ?>"><?php echo $telephone; ?></a>
-                                                </li>
-                                                <li class="line">-</li>
-                                                <li class="sdt">
-                                                    <span>Email:</span>
-                                                    <a href="mailto:test@example">test@example</a>
-                                                </li>
-                                            </ul>
-                                        </div>
+<!--                                    <div class="widget-db">-->
 <!--                                        <div class="item">-->
 <!--                                            <ul class="contact contact_x">-->
 <!--                                                <li>-->
 <!--												<span class="txt_content_child">-->
-<!--													<b>Chi nhánh:</b>-->
-<!--													--><?php //echo "Address 2"; ?>
+<!--													<b>--><?php //echo $store; ?><!--:</b>--><?php //echo $address; ?>
 <!--												</span>-->
 <!--                                                </li>-->
 <!--                                                <li class="sdt">-->
-<!--                                                    <span>Điện thoại:</span>-->
-<!--                                                    <a href="tel:1234567890">1234567890</a>-->
+<!--                                                    <span>--><?php //echo $text_telephone; ?><!--:</span>-->
+<!--                                                    <a href="tel:--><?php //echo $telephone; ?><!--">--><?php //echo $telephone; ?><!--</a>-->
 <!--                                                </li>-->
 <!--                                                <li class="line">-</li>-->
 <!--                                                <li class="sdt">-->
@@ -102,6 +83,25 @@
 <!--                                                </li>-->
 <!--                                            </ul>-->
 <!--                                        </div>-->
+                                        <div class="item">
+                                            <ul class="contact contact_x">
+                                                <li>
+												<span class="txt_content_child">
+													<b>Địa chỉ:</b>
+													<?php echo "Số 18 ngõ 65 Phố Phúc Xá, Ba Đình, Hà Nội (Từ phố Tân Ấp, rẽ phải vào Nghĩa Dũng đến ngã ba rẽ phải vào Phố Phúc Xá)"; ?>
+												</span>
+                                                </li>
+                                                <li class="sdt">
+                                                    <span>Điện thoại:</span>
+                                                    <a href="tel:<?php echo "0982130505" ?>"><?php echo "0982130505" ?></a>
+                                                </li>
+                                                <li class="line">-</li>
+                                                <li class="sdt">
+                                                    <span>Email:</span>
+                                                    <a href="<?php echo "famifoodhn@gmail.com" ?>"><?php echo "famifoodhn@gmail.com" ?></a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="bct">

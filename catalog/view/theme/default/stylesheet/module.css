@@ -431,7 +431,7 @@
     bottom: -46px;
     left: 0;
     width: 100%;
-    border-bottom: 2px solid #eb3e32
+    border-bottom: 2px solid #2d8830
 }
 
 .section-base .title-top-menu h3 {
@@ -441,9 +441,8 @@
     line-height: 24px;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
-    font-family: 'UTM';
     font-weight: 400;
-    background: #eb3e32;
+    background: #2d8830;
     text-transform: uppercase;
     display: inline-block
 }
