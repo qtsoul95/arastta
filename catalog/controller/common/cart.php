@@ -54,6 +54,7 @@ class ControllerCommonCart extends Controller {
         $data['text_items'] = $this->cart->countProducts();
         $data['text_loading'] = $this->language->get('text_loading');
 
+        $data['shopping_cart'] = $this->url->link('checkout/cart');
         $data['button_remove'] = $this->language->get('button_remove');
 
         $this->load->model('tool/image');

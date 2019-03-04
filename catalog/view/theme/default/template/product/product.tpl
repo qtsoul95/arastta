@@ -83,7 +83,7 @@
                             </div>
                             <div class="product-summary product-description">
                                 <div class="rte description  rte-summary">
-                                    <p>Chất liệu vải bố bền, chắc chắn, kéo dài thời gian sử dụng, đem lại yên tâm cho người sử dụng. Thiết kế thời trang, phối màu nổi bật cho phái đẹp và phái mạnh tự tin xuống phố</p>
+                                    <p></p>
                                 </div>
                             </div>
                             <div class="form-product col-sm-12">

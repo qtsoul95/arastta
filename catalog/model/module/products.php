@@ -12,6 +12,8 @@ class ModelModuleProducts extends Model
 
     public function getAllProducts($data = array())
     {
+        $product_data = array();
+
         $sql = "SELECT p.product_id FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_to_store p2s ON (p.product_id = p2s.product_id) LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id)";
 
         if (!empty($data['categories'])) {
@@ -137,6 +139,8 @@ class ModelModuleProducts extends Model
 
     public function getLatestProducts($data = array())
     {
+        $product_data = array();
+
         $sql = "SELECT p.product_id FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_to_store p2s ON (p.product_id = p2s.product_id) LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id)";
 
         if (!empty($data['categories'])) {
