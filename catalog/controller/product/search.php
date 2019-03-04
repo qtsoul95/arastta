@@ -148,8 +148,6 @@ class ControllerProductSearch extends Controller {
             $data['heading_title'] = $this->language->get('heading_title');
         }
 
-        $data['text_empty'] = $this->language->get('text_empty');
-        $data['text_search'] = $this->language->get('text_search');
         $data['text_keyword'] = $this->language->get('text_keyword');
         $data['text_category'] = $this->language->get('text_category');
         $data['text_sub_category'] = $this->language->get('text_sub_category');
@@ -214,6 +212,7 @@ class ControllerProductSearch extends Controller {
         }
 
         $data['products'] = array();
+        $product_total = 0;
 
         if (isset($this->request->get['search']) || isset($this->request->get['tag'])) {
             $filter_data = array(
@@ -480,6 +479,7 @@ class ControllerProductSearch extends Controller {
             $this->model_account_search->addSearch($search_data);
         }
 
+        $data['text_search'] = sprintf($this->language->get('text_search'), $product_total);
         $data['search'] = $search;
         $data['description'] = $description;
         $data['category_id'] = $category_id;

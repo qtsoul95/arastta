@@ -12,7 +12,7 @@ $_['heading_title']     = 'Search';
 $_['heading_tag']       = 'Tag - ';
 
 // Text
-$_['text_search']       = 'Products meeting the search criteria';
+$_['text_search']       = 'Có %s kết quả tìm kiếm phù hợp';
 $_['text_keyword']      = 'Keywords';
 $_['text_category']     = 'All Categories';
 $_['text_sub_category'] = 'Search in subcategories';

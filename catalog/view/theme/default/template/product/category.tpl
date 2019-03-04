@@ -38,7 +38,7 @@
                             <div class="col-xs-12 col-sm-6 col-md-6 text-xs-left text-sm-right">
                                 <div class="bg-white clearfix f-right">
                                     <div class="view-mode">
-                                        <a href="javascript:;" data-view="list" onclick="switchView('list')">
+                                        <a href="javascript:;" data-view="list">
                                             <b class="btn button-view-mode view-mode-list">
                                                 <i class="fa fa-th-list" aria-hidden="true"></i>
                                             </b>

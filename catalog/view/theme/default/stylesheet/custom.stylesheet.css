@@ -4143,3 +4143,18 @@ div.row > div#content {
     padding-bottom: 20px;
     background: #fff
 }
+.search-main {
+    margin-bottom: 30px
+}
+.search-main .products-view.products-view-grid .row:first-child {
+    margin: 0;
+    padding: 0 20px
+}
+.search-main .products-view.products-view-grid .row:first-child .col-lg-2 {
+    width: 20%
+}
+.advance-search {
+    margin: 0 -15px 20px -15px;
+    padding: 10px;
+    background-color: #fff
+}

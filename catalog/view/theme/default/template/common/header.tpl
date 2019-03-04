@@ -134,8 +134,9 @@
                         </div>
                         <div class="col-lg-5 col-md-5 col-xs-12 col-sm-12">
                             <div class="header-left header-search">
-                                <form action="/search" method="get" class="input-group search-bar" role="search">
-                                    <input type="text" name="query" autocomplete="off" placeholder="Tìm kiếm sản phẩm..." class="input-group-field">
+                                <form action="<?php echo $base."index.php?" ?>" method="get" class="input-group search-bar" role="search">
+                                    <input type="text" name="route" value="product/search" hidden>
+                                    <input type="text" name="search" autocomplete="off" placeholder="Tìm kiếm sản phẩm..." class="input-group-field">
                                     <span class="input-group-btn">
                                         <button type="submit" class="btn icon-fallback-text">
                                             <i class="fa fa-search"></i>

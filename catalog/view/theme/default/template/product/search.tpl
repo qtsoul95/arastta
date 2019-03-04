@@ -1,186 +1,188 @@
 <?php echo $header; ?>
-<div class="container">
-    <section class="bread-crumb">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <ul class="breadcrumb" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
-                        <?php foreach ($breadcrumbs as $key=>$breadcrumb) { ?>
-                            <li>
-                                <?php if ($key == count($breadcrumbs) - 1) { ?>
-                                    <strong><span itemprop="title"><?php echo $breadcrumb['text']; ?></span></strong>
-                                <?php } else { ?>
-                                    <a itemprop="url" href="<?php echo $breadcrumb['href']; ?>">
-                                        <span itemprop="title"><?php echo $breadcrumb['text']; ?></span>
-                                    </a>
-                                    <span>
+<section class="bread-crumb">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <ul class="breadcrumb" itemscope itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <?php foreach ($breadcrumbs as $key=>$breadcrumb) { ?>
+                        <li>
+                            <?php if ($key == count($breadcrumbs) - 1) { ?>
+                                <strong><span itemprop="title"><?php echo $heading_title; ?></span></strong>
+                            <?php } else { ?>
+                                <a itemprop="url" href="<?php echo $breadcrumb['href']; ?>">
+                                    <span itemprop="title"><?php echo $breadcrumb['text']; ?></span>
+                                </a>
+                                <span>
                                     <i class="fa fa-angle-right" aria-hidden="true"></i>
                                 </span>
-                                <?php } ?>
-                            </li>
-                        <?php } ?>
-                    </ul>
-                </div>
+                            <?php } ?>
+                        </li>
+                    <?php } ?>
+                </ul>
             </div>
         </div>
-    </section>
-    <div class="row"><?php echo $column_left; ?>
-        <?php if ($column_left && $column_right) { ?>
-        <?php $class = 'col-sm-6'; ?>
-        <?php } elseif ($column_left || $column_right) { ?>
-        <?php $class = 'col-sm-9'; ?>
-        <?php } else { ?>
-        <?php $class = 'col-sm-12'; ?>
-        <?php } ?>
-        <div id="content" class="<?php echo $class; ?>"><?php echo $content_top; ?>
-            <h1><?php echo $heading_title; ?></h1>
-            <label class="control-label" for="input-search"><?php echo $entry_search; ?></label>
-            <div class="row">
-                <div class="col-sm-4">
-                    <input type="text" name="search" value="<?php echo $search; ?>" placeholder="<?php echo $text_keyword; ?>" id="input-search" class="form-control" />
+    </div>
+</section>
+<div class="container search-main">
+    <div class="row">
+        <section>
+            <div class="advance-search">
+                <label class="control-label" for="input-search"><?php echo $entry_search; ?></label>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <input type="text" name="search" value="<?php echo $search; ?>" placeholder="<?php echo $text_keyword; ?>" id="input-search" class="form-control" />
+                    </div>
+                    <div class="col-sm-3">
+                        <select name="category_id" class="form-control">
+                            <option value="0"><?php echo $text_category; ?></option>
+                            <?php foreach ($categories as $category_1) { ?>
+                            <?php if ($category_1['category_id'] == $category_id) { ?>
+                            <option value="<?php echo $category_1['category_id']; ?>" selected="selected"><?php echo $category_1['name']; ?></option>
+                            <?php } else { ?>
+                            <option value="<?php echo $category_1['category_id']; ?>"><?php echo $category_1['name']; ?></option>
+                            <?php } ?>
+                            <?php foreach ($category_1['children'] as $category_2) { ?>
+                            <?php if ($category_2['category_id'] == $category_id) { ?>
+                            <option value="<?php echo $category_2['category_id']; ?>" selected="selected">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $category_2['name']; ?></option>
+                            <?php } else { ?>
+                            <option value="<?php echo $category_2['category_id']; ?>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $category_2['name']; ?></option>
+                            <?php } ?>
+                            <?php foreach ($category_2['children'] as $category_3) { ?>
+                            <?php if ($category_3['category_id'] == $category_id) { ?>
+                            <option value="<?php echo $category_3['category_id']; ?>" selected="selected">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $category_3['name']; ?></option>
+                            <?php } else { ?>
+                            <option value="<?php echo $category_3['category_id']; ?>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $category_3['name']; ?></option>
+                            <?php } ?>
+                            <?php } ?>
+                            <?php } ?>
+                            <?php } ?>
+                        </select>
+                    </div>
+                    <div class="col-sm-3">
+                        <label class="checkbox-inline">
+                            <?php if ($sub_category) { ?>
+                            <input type="checkbox" name="sub_category" value="1" checked="checked" />
+                            <?php } else { ?>
+                            <input type="checkbox" name="sub_category" value="1" />
+                            <?php } ?>
+                            <?php echo $text_sub_category; ?></label>
+                    </div>
                 </div>
-                <div class="col-sm-3">
-                    <select name="category_id" class="form-control">
-                        <option value="0"><?php echo $text_category; ?></option>
-                        <?php foreach ($categories as $category_1) { ?>
-                        <?php if ($category_1['category_id'] == $category_id) { ?>
-                        <option value="<?php echo $category_1['category_id']; ?>" selected="selected"><?php echo $category_1['name']; ?></option>
-                        <?php } else { ?>
-                        <option value="<?php echo $category_1['category_id']; ?>"><?php echo $category_1['name']; ?></option>
-                        <?php } ?>
-                        <?php foreach ($category_1['children'] as $category_2) { ?>
-                        <?php if ($category_2['category_id'] == $category_id) { ?>
-                        <option value="<?php echo $category_2['category_id']; ?>" selected="selected">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $category_2['name']; ?></option>
-                        <?php } else { ?>
-                        <option value="<?php echo $category_2['category_id']; ?>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $category_2['name']; ?></option>
-                        <?php } ?>
-                        <?php foreach ($category_2['children'] as $category_3) { ?>
-                        <?php if ($category_3['category_id'] == $category_id) { ?>
-                        <option value="<?php echo $category_3['category_id']; ?>" selected="selected">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $category_3['name']; ?></option>
-                        <?php } else { ?>
-                        <option value="<?php echo $category_3['category_id']; ?>">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $category_3['name']; ?></option>
-                        <?php } ?>
-                        <?php } ?>
-                        <?php } ?>
-                        <?php } ?>
-                    </select>
-                </div>
-                <div class="col-sm-3">
+                <p>
                     <label class="checkbox-inline">
-                        <?php if ($sub_category) { ?>
-                        <input type="checkbox" name="sub_category" value="1" checked="checked" />
+                        <?php if ($description) { ?>
+                        <input type="checkbox" name="description" value="1" id="description" checked="checked" />
                         <?php } else { ?>
-                        <input type="checkbox" name="sub_category" value="1" />
+                        <input type="checkbox" name="description" value="1" id="description" />
                         <?php } ?>
-                        <?php echo $text_sub_category; ?></label>
-                </div>
+                        <?php echo $entry_description; ?></label>
+                </p>
+                <input type="button" value="<?php echo $button_search; ?>" id="button-search" class="btn btn-primary" />
             </div>
-            <p>
-                <label class="checkbox-inline">
-                    <?php if ($description) { ?>
-                    <input type="checkbox" name="description" value="1" id="description" checked="checked" />
-                    <?php } else { ?>
-                    <input type="checkbox" name="description" value="1" id="description" />
-                    <?php } ?>
-                    <?php echo $entry_description; ?></label>
-            </p>
-            <input type="button" value="<?php echo $button_search; ?>" id="button-search" class="btn btn-primary" />
-            <h2><?php echo $text_search; ?></h2>
             <?php if ($products) { ?>
-            <p><a href="<?php echo $compare; ?>" id="compare-total"><?php echo $text_compare; ?></a></p>
             <div class="row">
-                <div class="col-sm-3 hidden-xs">
-                    <div class="btn-group">
-                        <button type="button" id="list-view" class="btn btn-default" data-toggle="tooltip" title="<?php echo $button_list; ?>"><i class="fa fa-th-list"></i></button>
-                        <button type="button" id="grid-view" class="btn btn-default" data-toggle="tooltip" title="<?php echo $button_grid; ?>"><i class="fa fa-th"></i></button>
-                    </div>
-                </div>
-                <div class="col-sm-1 col-sm-offset-2 text-right">
-                    <label class="control-label" for="input-sort"><?php echo $text_sort; ?></label>
-                </div>
-                <div class="col-sm-3 text-right">
-                    <select id="input-sort" class="form-control col-sm-3" onchange="location = this.value;">
-                        <?php foreach ($sorts as $sorts) { ?>
-                        <?php if ($sorts['value'] == $sort . '-' . $order) { ?>
-                        <option value="<?php echo $sorts['href']; ?>" selected="selected"><?php echo $sorts['text']; ?></option>
-                        <?php } else { ?>
-                        <option value="<?php echo $sorts['href']; ?>"><?php echo $sorts['text']; ?></option>
-                        <?php } ?>
-                        <?php } ?>
-                    </select>
-                </div>
-                <div class="col-sm-1 text-right">
-                    <label class="control-label" for="input-limit"><?php echo $text_limit; ?></label>
-                </div>
-                <div class="col-sm-2 text-right">
-                    <select id="input-limit" class="form-control" onchange="location = this.value;">
-                        <?php foreach ($limits as $limits) { ?>
-                        <?php if ($limits['value'] == $limit) { ?>
-                        <option value="<?php echo $limits['href']; ?>" selected="selected"><?php echo $limits['text']; ?></option>
-                        <?php } else { ?>
-                        <option value="<?php echo $limits['href']; ?>"><?php echo $limits['text']; ?></option>
-                        <?php } ?>
-                        <?php } ?>
-                    </select>
-                </div>
-            </div>
-            <br />
-            <div class="row">
-                <?php foreach ($products as $product) { ?>
-                <div class="product-layout product-list col-xs-12">
-                    <div class="product-thumb">
-                        <div class="image"><a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-responsive" /></a></div>
-                        <div class="caption">
-                            <h4><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a></h4>
-                            <p><?php echo $product['description']; ?></p>
-                            <?php if ($product['price']) { ?>
-                            <p class="price">
-                                <?php if (!$product['special']) { ?>
-                                <?php echo $product['price']; ?>
-                                <?php } else { ?>
-                                <span class="price-new"><?php echo $product['special']; ?></span> <span class="price-old"><?php echo $product['price']; ?></span>
-                                <?php } ?>
-                                <?php if ($product['tax']) { ?>
-                                <span class="price-tax"><?php echo $text_tax; ?> <?php echo $product['tax']; ?></span>
-                                <?php } ?>
-                            </p>
-                            <?php } ?>
-                            <?php if ($product['rating']) { ?>
-                            <div class="rating">
-                                <?php for ($i = 1; $i <= 5; $i++) { ?>
-                                <?php if ($product['rating'] < $i) { ?>
-                                <span class="fa fa-stack"><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                <?php } else { ?>
-                                <span class="fa fa-stack"><i class="fa fa-star fa-stack-2x"></i><i class="fa fa-star-o fa-stack-2x"></i></span>
-                                <?php } ?>
-                                <?php } ?>
+                <div class="sortPagiBar">
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-6 col-md-6">
+                            <div class="box-heading relative">
+                                <h1 class="title-head margin-top-0"><?php echo $text_search; ?></h1>
                             </div>
-                            <?php } ?>
                         </div>
-                        <div class="button-group">
-                            <button type="button" onclick="cart.add('<?php echo $product['product_id']; ?>', '<?php echo $product['minimum']; ?>');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md"><?php echo $button_cart; ?></span></button>
-                            <button type="button" data-toggle="tooltip" title="<?php echo $button_wishlist; ?>" onclick="wishlist.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-heart"></i></button>
-                            <button type="button" data-toggle="tooltip" title="<?php echo $button_compare; ?>" onclick="compare.add('<?php echo $product['product_id']; ?>');"><i class="fa fa-exchange"></i></button>
+                        <div class="col-xs-12 col-sm-6 col-md-6 text-xs-left text-sm-right">
+                            <div class="bg-white clearfix f-right">
+                                <div class="view-mode">
+                                    <a href="javascript:;" data-view="list">
+                                        <b class="btn button-view-mode view-mode-list">
+                                            <i class="fa fa-th-list" aria-hidden="true"></i>
+                                        </b>
+                                        <span>Danh sách</span>
+                                    </a>
+                                    <a href="javascript:;" data-view="grid">
+                                        <b class="btn button-view-mode view-mode-grid active">
+                                            <i class="fa fa-th" aria-hidden="true"></i>
+                                        </b>
+                                        <span>Lưới</span>
+                                    </a>
+                                </div>
+                                <div id="sort-by">
+                                    <select id="input-sort" class="form-control" onchange="location = this.value;">
+                                        <?php foreach ($sorts as $sorts) { ?>
+                                            <?php if ($sorts['value'] == $sort . '-' . $order) { ?>
+                                                <option value="<?php echo $sorts['href']; ?>"
+                                                        selected="selected"><?php echo $sorts['text']; ?></option>
+                                            <?php } else { ?>
+                                                <option value="<?php echo $sorts['href']; ?>"><?php echo $sorts['text']; ?></option>
+                                            <?php } ?>
+                                        <?php } ?>
+                                    </select>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <?php } ?>
             </div>
+            <section class="products-view products-view-grid">
+                <div class="row">
+                <?php foreach ($products as $product) { ?>
+                    <div class="col-xs-5 col-sm-3 col-md-3 col-lg-2 grid-item">
+                        <a href="<?php echo $product['href']; ?>" class="product-link"
+                           title="<?php echo $product['name']; ?>">
+                            <div class="product-box">
+                                <div class="product-thumbnail">
+                                    <div style="background-image: url(<?php echo $product['thumb']; ?>)"></div>
+                                    <!--  Tag giá sốc -->
+                                    <!-- End tag giá sốc -->
+                                    <?php if ($product['special']) { ?>
+                                        <div class="tagmakm_sale makm">
+                                            <div class="f-left codekm">
+                                                <div class="codekm_1">
+                                                    Nhập mã<br>
+                                                </div>
+                                                <div class="codekm_2">
+                                                    CTKM001
+                                                </div>
+                                            </div>
+                                            <div class="f-right price_km">
+                                                -200.000 Đ
+                                            </div>
+                                        </div>
+                                    <?php } ?>
+                                </div>
+                                <div class="product-info a-left">
+                                    <div class="product-name">
+                                        <div><?php echo $product['name']; ?></div>
+                                    </div>
+                                    <div class="h-space"></div>
+                                    <div class="product-price a-left">
+                                        <?php if (!$product['special']) { ?>
+                                            <div class="special-price"><?php echo $product['price']; ?></div>
+                                        <?php } else { ?>
+                                            <div class="special-price"><?php echo $product['special']; ?></div>
+                                            <div class="old-price"><?php echo $product['price']; ?></div>
+                                        <?php } ?>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                <?php } ?>
+                </div>
+            </section>
             <div class="row">
                 <div class="col-sm-6 text-left"><?php echo $pagination; ?></div>
                 <div class="col-sm-6 text-right"><?php echo $results; ?></div>
             </div>
             <?php } else { ?>
-            <p><?php echo $text_empty; ?></p>
+                <h2><?php echo $text_search; ?></h2>
             <?php } ?>
-            <?php echo $content_bottom; ?></div>
-        <?php echo $column_right; ?></div>
+        </section>
+    </div>
 </div>
 <script type="text/javascript"><!--
 $('#button-search').bind('click', function() {
     url = 'index.php?route=product/search';
 
-    var search = $('#content input[name=\'search\']').prop('value');
+    var search = $('.advance-search input[name=\'search\']').prop('value');
 
     if (search) {
         url += '&search=' + encodeURIComponent(search);
